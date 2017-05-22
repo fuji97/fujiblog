@@ -1,5 +1,28 @@
+body, button, input, optgroup, select, textarea {
+	font-family: Roboto;
+}
+
+label {
+	font-weight: inherit;
+}
+
+h1 {
+	font-size: 52px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
 .container {
 	margin-top: 20px;
+}
+
+.collection.extended {
+	border-left: 0px;
+	border-right: 0px;
+	margin-left: -25px;
+	margin-right: -25px;
 }
 
 body > nav img {
@@ -8,5 +31,23 @@ body > nav img {
 }
 
 p.entry-discussions {
+	margin-bottom: 0px;
+}
+
+nav a:hover, nav a:focus {
+	color: #fff;
+	text-decoration: none;
+}
+
+a.breadcumb:hover, a.breadcumb:focus {
+	color: #fff;
+	text-decoration: none;
+}
+
+.btn:hover, .btn:focus {
+	color: #fff;
+}
+
+.row.short {
 	margin-bottom: 0px;
 }

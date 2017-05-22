@@ -1,0 +1,4 @@
+django
+django-blog-zinnia
+django-app-namespace-template-loader
+django-contrib-comments
