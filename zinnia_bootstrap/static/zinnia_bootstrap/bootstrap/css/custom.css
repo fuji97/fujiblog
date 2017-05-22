@@ -18,11 +18,47 @@ h2 {
 	margin-top: 20px;
 }
 
+span.badge {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.breadcrumb {
+	padding: 0;
+	font-size: 16px;
+}
+
+.breadcrumb::before {
+	margin-top: -7px;
+}
+
+div.breadcrumb-container {
+	margin: 0;
+}
+
+div.breadcrumb-container div.card-content {
+	padding-top: 22px;
+	padding-bottom: 14px;
+}
+
+a.breadcumb:hover, a.breadcumb:focus {
+	color: #fff;
+	text-decoration: none;
+}
+
 .collection.extended {
-	border-left: 0px;
-	border-right: 0px;
 	margin-left: -25px;
 	margin-right: -25px;
+}
+
+div.input-field.navbar-search {
+	margin-left: 60px;
+}
+
+.input-field.navbar-search input[type=search] {
+	width: calc(100% + 60px);
+	margin-left: -60px;
+	padding-left: calc(4rem + 60px);
 }
 
 body > nav img {
@@ -39,15 +75,15 @@ nav a:hover, nav a:focus {
 	text-decoration: none;
 }
 
-a.breadcumb:hover, a.breadcumb:focus {
-	color: #fff;
-	text-decoration: none;
-}
-
 .btn:hover, .btn:focus {
 	color: #fff;
 }
 
+
 .row.short {
 	margin-bottom: 0px;
+}
+
+#sidenav-overlay {
+	z-index: 998;
 }

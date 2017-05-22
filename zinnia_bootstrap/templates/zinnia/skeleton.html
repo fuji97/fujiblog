@@ -95,7 +95,6 @@
 	<div class="navbar-fixed">
 		<nav>
 			<div class="nav-wrapper">
-				
 				<ul class="left hide-on-med-and-down">
 					<li>
 						<a href="{% url 'zinnia:entry_archive_index' %}" title="Fuji's Blog" rel="home">Fuji's Blog</a>
@@ -111,6 +110,7 @@
 					{% url 'zinnia:tag_list' as tag_list_url %}
 					<li {% if tag_list_url in request.path %}class="active" {% endif %}>
 						<a href="{{ tag_list_url }}" title="{% trans " Tag list " %}">{% trans "Tags" %}</a>
+					</li>
 				</ul>
 				<ul class="right hide-on-med-and-down">
 				{% url 'zinnia:sitemap' as sitemap_url %}
@@ -121,9 +121,45 @@
 						<a href="{% url 'zinnia:entry_feed' %}" title="{% trans " RSS Feed of latest entries " %}" class="feeds">{% trans "RSS Feed" %}</a>
 					</li>
 				</ul>
+
+				<!-- Mobile view -->
+				<form class="hide-on-large-only">
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+					<div class="input-field navbar-search">
+						
+						<input id="search" type="search" required>
+						<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+						<i class="material-icons">close</i>
+					</div>
+				</form>
 			</div>
 		</nav>
 	</div>
+	<!-- Navbar -->
+	<ul class="side-nav" id="mobile-demo">
+		<li>
+			<a href="{% url 'zinnia:entry_archive_index' %}" title="Fuji's Blog" rel="home">Fuji's Blog</a>
+		</li>
+		{% url 'zinnia:category_list' as category_list_url %}
+		<li {% if category_list_url in request.path %}class="active" {% endif %}>
+			<a href="{{ category_list_url }}" title="{% trans " Category list " %}">{% trans "Categories" %}</a>
+		</li>
+		{% url 'zinnia:author_list' as author_list_url %}
+		<li {% if author_list_url in request.path %}class="active" {% endif %}>
+			<a href="{{ author_list_url }}" title="{% trans " Author list " %}">{% trans "Authors" %}</a>
+		</li>
+		{% url 'zinnia:tag_list' as tag_list_url %}
+		<li {% if tag_list_url in request.path %}class="active" {% endif %}>
+			<a href="{{ tag_list_url }}" title="{% trans " Tag list " %}">{% trans "Tags" %}</a>
+		{% url 'zinnia:sitemap' as sitemap_url %}
+		<li {% if sitemap in request.path %}class="active" {% endif %}>
+			<a href="{{ sitemap_url }}" title="{% trans " Sitemap " %}" class="sitemap">{% trans "Sitemap" %}</a>
+		</li>
+		<li>
+			<a href="{% url 'zinnia:entry_feed' %}" title="{% trans " RSS Feed of latest entries " %}" class="feeds">{% trans "RSS Feed" %}</a>
+		</li>
+	</ul>
+
 	{% block slider %}{% endblock %}
 	<div class="container">
 		<div class="row">
@@ -160,6 +196,7 @@
 	<script type="text/javascript" src="{% static "zinnia_bootstrap/assets/js/jquery.js" %}"></script>
 	<script type="text/javascript" src="{% static "zinnia_bootstrap/bootstrap/js/bootstrap.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "zinnia_bootstrap/bootstrap/js/materialize.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "zinnia_bootstrap/bootstrap/js/custom.js" %}"></script>
 </body>
 
 </html>

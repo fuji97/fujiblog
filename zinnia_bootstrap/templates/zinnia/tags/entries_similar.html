@@ -1,8 +1,8 @@
 {% load i18n %}
-<div class="collection">
-  {% for entry in entries %}
-    <a class="collection-item" href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
-  {% empty %}
-    <a class="collection-item" href="#!">{% trans "No similar entries." %}</a>
-  {% endfor %}
+<div class="collection extended">
+	{% for entry in entries %}
+	<a class="collection-item" href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
+	{% empty %}
+	<a class="collection-item" href="#!">{% trans "No similar entries." %}</a>
+	{% endfor %}
 </div>

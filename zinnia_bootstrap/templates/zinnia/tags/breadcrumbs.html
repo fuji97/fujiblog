@@ -1,27 +1,25 @@
 <!--
 <ul class="breadcrumb">
-  {% for crumb in breadcrumbs %}
-  <li {% if forloop.last %}class="active"{% endif%}>
-   
-    {% if crumb.url %}
-    <a href="{{ crumb.url }}" title="{{ crumb.name }}">{{ crumb.name }}</a>
-    {% else %}
-    {{ crumb.name }}
-    {% endif %}
-  </li>
-  {% endfor %}
+    {% for crumb in breadcrumbs %}
+    <li {% if forloop.last %}class="active"{% endif%}>
+     
+        {% if crumb.url %}
+        <a href="{{ crumb.url }}" title="{{ crumb.name }}">{{ crumb.name }}</a>
+        {% else %}
+        {{ crumb.name }}
+        {% endif %}
+    </li>
+    {% endfor %}
 </ul>
 -->
-<nav class="grey lighten-1">
-    <div class="nav-wrapper">
-        <div class="col s12">
-            {% for crumb in breadcrumbs %}
-            {% if crumb.url %}
-            <a href="{{ crumb.url }}" class="breadcrumb grey lighten-1" title="{{ crumb.name }}">{{ crumb.name }}</a>
-            {% else %}
-            <a href="#!" class="breadcrumb grey lighten-1" title="{{ crumb.name }}">{{ crumb.name }}</a>
-            {% endif %}
-            {% endfor %}
+<div class="grey lighten-1 card breadcrumb-container">
+        <div class="card-content white-text">
+                    {% for crumb in breadcrumbs %}
+                    {% if crumb.url %}
+                    <a href="{{ crumb.url }}" class="breadcrumb grey lighten-1" title="{{ crumb.name }}">{{ crumb.name }}</a>
+                    {% else %}
+                    <a href="#!" class="breadcrumb grey lighten-1" title="{{ crumb.name }}">{{ crumb.name }}</a>
+                    {% endif %}
+                    {% endfor %}
         </div>
-    </div>
-  </nav>
+</div>

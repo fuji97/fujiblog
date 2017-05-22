@@ -1,17 +1,15 @@
 {% load i18n %}
-<ul class="category-root collection">
-  {% for category in categories %}
-  <li class="collection-item{% if category.slug == context_category.slug %} active{% endif %}">
+<div class="category-root collection extended">
+    {% for category in categories %}
     <a href="{{ category.get_absolute_url }}"
-       title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}">{{ category }}
-      <span class="new badge">
-        {% blocktrans count entry_count=category.count_entries_published %}{{ entry_count }} entry{% plural %}{{ entry_count }} entries{% endblocktrans %}
-      </span>
+        title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}"
+        class="collection-item{% if category.slug == context_category.slug %} active{% endif %}">
+        <span class="new badge">
+            {% blocktrans count entry_count=category.count_entries_published %}{{ entry_count }} entry{% plural %}{{ entry_count }} entries{% endblocktrans %}
+        </span>
+        {{ category }}
     </a>
-  </li>
-  {% empty %}
-  <li class="collection-item">
-    <a href="#">{% trans "No categories yet." %}</a>
-  </li>
-  {% endfor %}
-</ul>
+    {% empty %}
+    <a href="#!" class="collection-item">{% trans "No categories yet." %}</a>
+    {% endfor %}
+</div>
