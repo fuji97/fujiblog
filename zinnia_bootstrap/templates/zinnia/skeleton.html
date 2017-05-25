@@ -122,16 +122,15 @@
 					</li>
 				</ul>
 
-				<!-- Mobile view -->
-				<form class="hide-on-large-only">
+				<!-- Mobile view-->
+				<form method="get" action="{% url 'zinnia:entry_search' %}" class="hide-on-large-only" id="entry-mobile-search">
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 					<div class="input-field navbar-search">
-						
-						<input id="search" type="search" required>
-						<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+						<input id="mobile-search" type="search" name="pattern" value="{{ pattern }}">
+						<label class="label-icon" for="mobile-search"><i class="material-icons">search</i></label>
 						<i class="material-icons">close</i>
 					</div>
-				</form>
+				</form> 
 			</div>
 		</nav>
 	</div>
