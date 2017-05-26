@@ -87,3 +87,30 @@ nav a:hover, nav a:focus {
 #sidenav-overlay {
 	z-index: 998;
 }
+
+.floating-bar {
+	position: fixed;
+	top: 40px;
+}
+
+footer .container {
+	margin-top: 0;
+}
+
+footer.page-footer a, footer.page-footer a:hover, footer.page-footer a:focus {
+	color: #fff;
+}
+
+.btn-flat:hover, .btn-flat:focus {
+	text-decoration: none;
+	color: inherit;
+}
+
+.entry-body {
+	font-size: 18px;
+	line-height: 27px;
+}
+
+.collection-item:hover, .collection-item:focus {
+	text-decoration: none;
+}

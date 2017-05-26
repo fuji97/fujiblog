@@ -189,8 +189,27 @@
 			</div>
 		</div>
 	</div>
-	<footer class="container">
-		<p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Il Blog di Fuji</h5>
+					<p class="grey-text text-lighten-4">Qui sono presenti tutte le mie idee ed opinioni sui più disparati argomenti che mi passano davanti durante le mie giornate. Spero che queste riflessioni vi possano interessare almeno quanto hanno interessato me nel trascriverle<br>- Federico "Fuji" Rapetti</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Link</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+						<li><a class="grey-text text-lighten-3" href="https://twitter.com/1097fuji">Twitter</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2017 Fuji - {% blocktrans %}Powered by <b><a href="http://www.djangoproject.com">Django</a></b> and <b><a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a></b> with <b><a href="https://github.com/django-blog-zinnia/zinnia-theme-bootstrap" title="Zinnia Bootstrap">Zinnia Bootstrap</a></b>. Material Skin by Fuji{% endblocktrans %}
+			</div>
+		</div>
 	</footer>
 	<script type="text/javascript" src="{% static "zinnia_bootstrap/assets/js/jquery.js" %}"></script>
 	<script type="text/javascript" src="{% static "zinnia_bootstrap/bootstrap/js/bootstrap.min.js" %}"></script>

@@ -73,37 +73,31 @@
     </div>
 </aside>
 {% if user.is_authenticated %}
-<aside id="widget-tools" class="widget panel panel-danger">
+<aside id="widget-tools" class="widget card white">
     <div class="card-content">
         <span class="card-title grey-text text-darken-4">
             {% trans "Tools" %}
         </span>
-        <ul class="list-group">
+        <div class="collection extended">
             {% if perms.zinnia %}
-            <li class="list-group-item">
-                <a href="{% url 'admin:app_list' 'zinnia' %}" title="{% trans "Dashboard" %}">
+                <a class="collection-item" href="{% url 'admin:app_list' 'zinnia' %}" title="{% trans "Dashboard" %}">
         <span class="glyphicon glyphicon-book"></span>
-        {% trans "Dashboard" %}
+         {% trans "Dashboard" %}
                 </a>
-            </li>
             {% endif %}
             {% if perms.zinnia.add_entry %}
-            <li class="list-group-item">
-                <a href="{% url 'admin:zinnia_entry_add' %}" title="{% trans "Post an entry" %}">
+                <a class="collection-item" href="{% url 'admin:zinnia_entry_add' %}" title="{% trans "Post an entry" %}">
         <span class="glyphicon glyphicon-pencil"></span>
-        {% trans "Post an entry" %}
+         {% trans "Post an entry" %}
                 </a>
-            </li>
             {% endif %}
             {% block admin-tools %}
             {% endblock admin-tools %}
-            <li class="list-group-item">
-                <a href="{% url 'admin:logout' %}" title="{% trans "Log out" %}">
+                <a class="collection-item" href="{% url 'admin:logout' %}" title="{% trans "Log out" %}">
         <span class="glyphicon glyphicon-off"></span>
-        {% trans "Log out" %}
+         {% trans "Log out" %}
                 </a>
-            </li>
-        </ul>
+        </div>
     </div>
 </aside>
 {% endif %}
