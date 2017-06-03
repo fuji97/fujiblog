@@ -11,7 +11,7 @@
             <form method="get" id="entry_search" action="{% url 'zinnia:entry_search' %}" class="input-field">
                 <input class="search-query form-control" id="site_search" type="text" name="pattern" value="{{ pattern }}">
                 <label for="site_search">{% trans 'Search' %}</label>
-                <a name="submit" href="javascript:{}" onclick="$('#entry_search').submit();" class="waves-effect waves-light btn"><i class="material-icons left">search</i>{% trans "Cerca" %}</a>
+                <a name="submit" href="javascript:{}" onclick="$('#entry_search').submit();" class="waves-effect red lighten-2 waves-light btn"><i class="material-icons left">search</i>{% trans "Cerca" %}</a>
             </form>
         </div>
     </div>

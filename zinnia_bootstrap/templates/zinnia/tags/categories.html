@@ -4,7 +4,7 @@
     <a href="{{ category.get_absolute_url }}"
         title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}"
         class="collection-item{% if category.slug == context_category.slug %} active{% endif %}">
-        <span class="new badge">
+        <span class="new no-new badge">
             {% blocktrans count entry_count=category.count_entries_published %}{{ entry_count }} entry{% plural %}{{ entry_count }} entries{% endblocktrans %}
         </span>
         {{ category }}

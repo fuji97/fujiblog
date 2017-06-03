@@ -20,11 +20,16 @@
 		<script src="{% static "zinnia_bootstrap/assets/js/html5shiv.js" %}"></script>
 		<script src="{% static "zinnia_bootstrap/assets/js/respond.min.js" %}"></script>
 	<![endif]-->
-	<link rel="shortcut icon" href="{% static " zinnia/theme/img/favicon.ico " %}" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "zinnia_bootstrap/assets/ico/apple-touch-icon-144-precomposed.png" %}" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "zinnia_bootstrap/assets/ico/apple-touch-icon-114-precomposed.png" %}" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "zinnia_bootstrap/assets/ico/apple-touch-icon-72-precomposed.png" %}" />
-	<link rel="apple-touch-icon-precomposed" href="{% static "zinnia_bootstrap/assets/ico/apple-touch-icon-57-precomposed.png" %}" /> {% block link %}{% endblock link %} {% block script %}{% endblock script %}
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static "icons/apple-touch-icon.png" %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static "icons/favicon-32x32.png" %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static "icons/favicon-16x16.png" %}">
+	<link rel="manifest" href="{% static "icons/manifest.json" %}">
+	<link rel="mask-icon" href="{% static "icons/safari-pinned-tab.svg" %}" color="#ef5350">
+	<link rel="shortcut icon" href="{% static "icons/favicon.ico" %}">
+	<meta name="apple-mobile-web-app-title" content="Fuji's Blog">
+	<meta name="application-name" content="Fuji's Blog">
+	<meta name="msapplication-config" content="{% static "icons/browserconfig.xml" %}">
+	<meta name="theme-color" content="#f44336">
 </head>
 
 <body class="zinnia {% block body-class %}{% endblock body-class %}">
@@ -97,7 +102,7 @@
 			<div class="nav-wrapper">
 				<ul class="left hide-on-med-and-down">
 					<li>
-						<a href="{% url 'zinnia:entry_archive_index' %}" title="Fuji's Blog" rel="home">Fuji's Blog</a>
+						<a href="{% url 'zinnia:entry_archive_index' %}" title="Fuji's Blog" rel="home"><img src="{% static "images/logo-32.png" %}" title="Fuji's Blog" alt="Fuji's Blog Logo" /></a>
 					</li>
 					{% url 'zinnia:category_list' as category_list_url %}
 					<li {% if category_list_url in request.path %}class="active" {% endif %}>
@@ -134,11 +139,20 @@
 			</div>
 		</nav>
 	</div>
-	<!-- Navbar -->
+	<!-- Sidenav -->
 	<ul class="side-nav" id="mobile-demo">
+		<li><div class="userView">
+			<div class="background">
+				<img src="{% static "images/sidenav-bg.png" %}">
+			</div>
+			<a href="#!user"><img class="circle" src="{% static "images/64-bg.png" %}"></a>
+			<a href="#!name"><span class="white-text name">Fuji's Blog</span></a>
+			<a href="#!email"><span class="white-text email">https://fujinet.it</span></a>
+		</div></li>
 		<li>
-			<a href="{% url 'zinnia:entry_archive_index' %}" title="Fuji's Blog" rel="home">Fuji's Blog</a>
+			<a href="{% url 'zinnia:entry_archive_index' %}" title="Fuji's Blog" rel="home"><i class="material-icons">home</i>Home</a>
 		</li>
+		<li><div class="divider"></div></li>
 		{% url 'zinnia:category_list' as category_list_url %}
 		<li {% if category_list_url in request.path %}class="active" {% endif %}>
 			<a href="{{ category_list_url }}" title="{% trans " Category list " %}">{% trans "Categories" %}</a>
@@ -154,6 +168,8 @@
 		<li {% if sitemap in request.path %}class="active" {% endif %}>
 			<a href="{{ sitemap_url }}" title="{% trans " Sitemap " %}" class="sitemap">{% trans "Sitemap" %}</a>
 		</li>
+		<li><div class="divider"></div></li>
+		<li><a class="subheader">API</a></li>
 		<li>
 			<a href="{% url 'zinnia:entry_feed' %}" title="{% trans " RSS Feed of latest entries " %}" class="feeds">{% trans "RSS Feed" %}</a>
 		</li>
@@ -201,6 +217,7 @@
 					<ul>
 						<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
 						<li><a class="grey-text text-lighten-3" href="https://twitter.com/1097fuji">Twitter</a></li>
+						<li><a class="grey-text text-lighten-3" href="https://myanimelist.net/animelist/fuji97">MyAnimeList</a></li>
 					</ul>
 				</div>
 			</div>
